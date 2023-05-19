@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -6,13 +7,38 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      primary: colors.red,
+      secondary: {
+        light: '#ffffff',
+        dark: '#000000',
+      },
+      background: {
+        light: '#ffffff',
+        dark: '#000000',
+      },
+      text: {
+        light: '#000000',
+        dark: '#ffffff',
+      },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: {
+          light: '#f00',
+          dark: '#c00',
+        },
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+};
+// primary
+// primary-light
+// primary-dark
+// secondary
+// secondary-light
+// secondary-dark
+// background
+// background-light
+// background-dark
