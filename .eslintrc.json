@@ -6,7 +6,7 @@
     "plugin:@next/next/recommended",
     "prettier",
     "plugin:tailwindcss/recommended"
-],
+  ],
   "plugins": ["simple-import-sort", "import", "tailwindcss"],
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -31,6 +31,7 @@
     "import/extensions": [
       "error",
       {
+        "css": "always",
         "js": "never",
         "jsx": "never",
         "ts": "never",
