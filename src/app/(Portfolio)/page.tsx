@@ -1,11 +1,20 @@
 import config from '@/Lib/config';
 
+export const getServerSideProps = async () => {
+  const string: string = config.NEXT_PUBLIC_PORT;
+  return {
+    props: {
+      string,
+    },
+  };
+};
+
 const Home = () => {
   return (
     <main>
       <div>
         <h1 className="text-4xl font-bold">HOME</h1>
-        <p>port number is {config.port}</p>
+        <div>The value of the `NEXT_PUBLIC_PORT` environment variable is: {process.env['NEXT_PUBLIC_PORT']}</div>
       </div>
       <div>
         <div className="bg-primary text-secondary">
