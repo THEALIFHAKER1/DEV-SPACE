@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -7,6 +8,8 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {},
+    fontSize: {},
     colors: {
       primary: colors.red,
       secondary: {
@@ -28,6 +31,9 @@ module.exports = {
           light: '#f00',
           dark: '#c00',
         },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
       },
     },
   },
