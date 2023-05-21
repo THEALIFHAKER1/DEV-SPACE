@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@types/node": "20.2.1",
@@ -23,8 +24,6 @@
     "classnames": "^2.3.2",
     "env-var": "^7.3.1",
     "eslint": "8.2.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "13.4.2",
     "next": "13.4.2",
     "postcss": "^8.4.23",
     "react": "18.2.0",
@@ -52,6 +51,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "css-loader": "^6.7.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "13.4.2",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
