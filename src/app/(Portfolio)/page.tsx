@@ -1,7 +1,7 @@
 import config from '@/Lib/config';
 
 export const getServerSideProps = async () => {
-  const string: string = config.NEXT_PUBLIC_PORT;
+  const string = config.NEXT_PUBLIC_PORT;
   return {
     props: {
       string,
