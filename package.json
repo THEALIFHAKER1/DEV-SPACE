@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@types/node": "20.2.1",
@@ -34,6 +36,13 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@storybook/addon-essentials": "7.0.12",
+    "@storybook/addon-interactions": "7.0.12",
+    "@storybook/addon-links": "7.0.12",
+    "@storybook/blocks": "7.0.12",
+    "@storybook/nextjs": "7.0.12",
+    "@storybook/react": "7.0.12",
+    "@storybook/testing-library": "0.0.14-next.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "eslint-config-airbnb": "19.0.4",
@@ -43,9 +52,11 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-tailwindcss": "^3.12.0",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "storybook": "7.0.12"
   }
 }
