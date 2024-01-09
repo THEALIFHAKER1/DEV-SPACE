@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import Navbar from "@/components/layout/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,16 +18,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} p-5`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            {children}
-          </AppRouterCacheProvider>
+          <Navbar />
+          {children}
         </ThemeProvider>
       </body>
     </html>
