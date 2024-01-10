@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
     author: "https://ae1.pro",
   },
   links: {
-    github: "https://github.com/THEALIFHAKER1/DEV-SPACE",
+    github: "https://github.com/THEALIFHAKER1",
   },
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
 };
