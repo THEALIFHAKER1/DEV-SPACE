@@ -3376,6 +3376,7 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     react-fast-marquee: "npm:^1.6.2"
+    react-icons: "npm:^4.12.0"
     tailwind-merge: "npm:^2.2.0"
     tailwindcss: "npm:^3.3.0"
     tailwindcss-animate: "npm:^1.0.7"
@@ -3941,6 +3942,15 @@ __metadata:
     react: ">= 16.8.0 || 18.0.0"
     react-dom: ">= 16.8.0 || 18.0.0"
   checksum: 4baddd8e81f4ca746d08f748f443cc49dc6d18cb2c4bd152e8bd5b0a74165756ad83cfd9f5ad45d553b40b6cc4ca1cd4ddbd1e904133dddaca6194ed180d8e30
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.12.0":
+  version: 4.12.0
+  resolution: "react-icons@npm:4.12.0"
+  peerDependencies:
+    react: "*"
+  checksum: 2170f43031ee7365539f72d4075cbe6c7fbf9a66d6cf4494aa9393b194272da0564f5b19d1b24dbfc567c0ac89f5fe5b8974d92dd83f61e252388dde6a226fb8
   languageName: node
   linkType: hard
 
