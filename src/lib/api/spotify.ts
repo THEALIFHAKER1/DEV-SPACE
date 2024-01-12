@@ -8,7 +8,7 @@ async function getAccessToken() {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: `Basic ${Buffer.from(
-        `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`,
+        `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
       ).toString("base64")}`,
     },
     body: `grant_type=refresh_token&refresh_token=${SPOTIFY_REFRESH_TOKEN}`,
@@ -18,7 +18,7 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-async function getCurrentlyPlaying() {
+export default async function getCurrentlyPlaying() {
   const accessToken = await getAccessToken();
   const response = await fetch(
     "https://api.spotify.com/v1/me/player/currently-playing",
@@ -26,11 +26,11 @@ async function getCurrentlyPlaying() {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-    },
+    }
   );
+  if (!response.ok) {
+    throw new Error(`API request failed with status ${response.status}`);
+  }
 
-  const data = await response.json();
-  return data;
+  return await response.json();
 }
-
-export default getCurrentlyPlaying;

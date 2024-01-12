@@ -1,30 +1,19 @@
-// const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
-// const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
-// const GITHUB_GRAPHQL = "https://api.github.com/graphql";
+import { env } from "@/env.mjs";
+import { Repository } from "@/types";
 
-// export default async function GetAllRepos() {
-//   const response = await fetch(GITHUB_GRAPHQL, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
-//     },
-//     body: JSON.stringify({
-//       query: `
-//           query {
-//             user(login: "${GITHUB_USERNAME}") {
-//               repositories(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
-//                 nodes {
-//                   name
-//                   description
-//                   url
-//                 }
-//               }
-//             }
-//           }
-//         `,
-//     }),
-//   });
-//   const data = await response.json();
-//   return data;
-// }
+const token = env.GITHUB_TOKEN;
+export async function getRepositories(): Promise<Repository[]> {
+  const apiUrl = "https://api.github.com/users/THEALIFHAKER1/repos";
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`API request failed with status ${response.status}`);
+  }
+
+  return (await response.json()) as Repository[];
+}

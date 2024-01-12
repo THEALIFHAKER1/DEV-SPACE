@@ -4,8 +4,8 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     WAKATIME_API_KEY: z.string().startsWith("waka_"),
-    GH_API_URL: z.string().startsWith("https://"),
     DISCORD_ID: z.string().min(1),
+    GITHUB_TOKEN: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),
@@ -15,7 +15,8 @@ export const env = createEnv({
     // WAKATIME
     WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
     // GITHUB
-    GH_API_URL: process.env.GH_API_URL,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    NEXT_PUBLIC_GITHUB_TOKEN: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
     // DISCORD
     DISCORD_ID: process.env.DISCORD_ID,
     NEXT_PUBLIC_DISCORD_ID: process.env.NEXT_PUBLIC_DISCORD_ID,

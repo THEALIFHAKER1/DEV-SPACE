@@ -3390,6 +3390,7 @@ __metadata:
     typescript: "npm:^5"
     typewriter-effect: "npm:^2.21.0"
     vaul: "npm:^0.8.0"
+    wretch: "npm:^2.8.0"
     zod: "npm:^3.22.4"
   languageName: unknown
   linkType: soft
@@ -4971,6 +4972,13 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 56fece1a4018c6a6c8e28fbc88c87e0fbf4ea8fd64fc6c63b18f4acc4bd13e0ad2515189786dd2c30d3eec9663d70f4ecf699330002f8ccb547e4a18231fc9f0
+  languageName: node
+  linkType: hard
+
+"wretch@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "wretch@npm:2.8.0"
+  checksum: 2c745cc46afe5b3fe8adff66262f59bf77efead94be53c6fc3426d8c30cd28ea207fcd17816af84115c5e3ac02b7124be18f3dfddcc23084edbc5f7157b6beca
   languageName: node
   linkType: hard
 
