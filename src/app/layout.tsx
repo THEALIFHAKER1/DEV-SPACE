@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import Navbar from "@/components/layout/navbar/navbar";
 import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/config/site";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,7 +66,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="pt-20 px-5 pb-20 md:pb-0">{children}</div>
+          <div className="pt-20 px-5 pb-20 md:pb-0">
+            {children}
+            <SpeedInsights />
+          </div>
           <Footer />
         </ThemeProvider>
       </body>
