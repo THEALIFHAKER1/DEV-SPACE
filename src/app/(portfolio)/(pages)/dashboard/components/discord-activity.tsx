@@ -11,6 +11,7 @@ import { DiscordActivityCard } from "./discord-activity-card";
 import { env } from "@/env.mjs";
 import { DiscordApiResponse, DiscordApiContent, Activity } from "@/types";
 import useWebSocket, { ReadyState } from "react-use-websocket";
+import { motion } from "framer-motion";
 
 interface MessageData {
   op: number;
@@ -89,79 +90,86 @@ export function DiscordActivity() {
           </div>
         ) : (
           <>
-            {data.data ? (
-              <>
-                {/* Display no activities */}
-                <DiscordStatus data={data.data} />
-                <div className="flex flex-grow flex-col gap-2">
-                  {!data ||
-                  !data.data ||
-                  !data.data.activities ||
-                  data.data.activities.length === 0 ? (
-                    <Alert className="bg-muted">
-                      <AlertDescription>
-                        No activities currently.
-                      </AlertDescription>
-                    </Alert>
-                  ) : (
-                    <>
-                      {/* Render custom status with no other activities */}
-                      {data.data.activities.length === 1 &&
-                      data.data.activities[0].name === "Custom Status" ? (
-                        <>
-                          {data?.data?.activities?.map(
-                            (activity: Activity, index: number) =>
-                              activity.name === "Custom Status" && (
-                                <p
-                                  key={index}
-                                  className="text-sm text-muted-foreground"
-                                >
-                                  {activity.state}
-                                </p>
-                              )
-                          )}
-                          <Alert className="bg-muted">
-                            <AlertDescription>
-                              No activities currently.
-                            </AlertDescription>
-                          </Alert>
-                        </>
-                      ) : (
-                        <>
-                          {/* Render custom status including other activities */}
-                          {data?.data?.activities?.map(
-                            (activity: Activity, index: number) =>
-                              activity.name === "Custom Status" && (
-                                <p
-                                  key={index}
-                                  className="text-sm text-muted-foreground"
-                                >
-                                  {activity.state}
-                                </p>
-                              )
-                          )}
-                          {data?.data?.activities?.map(
-                            (activity: Activity, index: number) =>
-                              activity.name !== "Custom Status" && (
-                                <DiscordActivityCard
-                                  key={index}
-                                  activity={activity}
-                                  data={data}
-                                />
-                              )
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
+            <motion.div
+              initial={{ height: 80 }}
+              animate={{ height: "fit-content" }}
+              transition={{ duration: 0.5 }}
+              style={{ overflow: "hidden" }}
+            >
+              {data.data ? (
+                <>
+                  {/* Display no activities */}
+                  <DiscordStatus data={data.data} />
+                  <div className="flex flex-grow flex-col gap-2">
+                    {!data ||
+                    !data.data ||
+                    !data.data.activities ||
+                    data.data.activities.length === 0 ? (
+                      <Alert className="bg-muted">
+                        <AlertDescription>
+                          No activities currently.
+                        </AlertDescription>
+                      </Alert>
+                    ) : (
+                      <>
+                        {/* Render custom status with no other activities */}
+                        {data.data.activities.length === 1 &&
+                        data.data.activities[0].name === "Custom Status" ? (
+                          <>
+                            {data?.data?.activities?.map(
+                              (activity: Activity, index: number) =>
+                                activity.name === "Custom Status" && (
+                                  <p
+                                    key={index}
+                                    className="text-sm text-muted-foreground"
+                                  >
+                                    {activity.state}
+                                  </p>
+                                )
+                            )}
+                            <Alert className="bg-muted">
+                              <AlertDescription>
+                                No activities currently.
+                              </AlertDescription>
+                            </Alert>
+                          </>
+                        ) : (
+                          <>
+                            {/* Render custom status including other activities */}
+                            {data?.data?.activities?.map(
+                              (activity: Activity, index: number) =>
+                                activity.name === "Custom Status" && (
+                                  <p
+                                    key={index}
+                                    className="text-sm text-muted-foreground"
+                                  >
+                                    {activity.state}
+                                  </p>
+                                )
+                            )}
+                            {data?.data?.activities?.map(
+                              (activity: Activity, index: number) =>
+                                activity.name !== "Custom Status" && (
+                                  <DiscordActivityCard
+                                    key={index}
+                                    activity={activity}
+                                    data={data}
+                                  />
+                                )
+                            )}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="flex gap-2">
+                  <Skeleton className="h-10 w-10 rounded-full" />
+                  <Skeleton className="h-10 w-[14rem]" />
                 </div>
-              </>
-            ) : (
-              <div className="flex gap-2">
-                <Skeleton className="h-10 w-10 rounded-full" />
-                <Skeleton className="h-10 w-[14rem]" />
-              </div>
-            )}
+              )}
+            </motion.div>
           </>
         )}
       </CardContent>
