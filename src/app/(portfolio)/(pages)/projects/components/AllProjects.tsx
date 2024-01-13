@@ -12,15 +12,7 @@ import {
 import { ExternalLink, Star } from "lucide-react";
 
 export default async function AllProjects() {
-  //   {
-  //   limit,
-  //   offset,
-  // }: {
-  //   limit: number;
-  //   offset: number;
-  // }
   const repositories = (await getRepositories()) as Repository[];
-  // limit, offset
   return (
     <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3">
       {repositories.map((repo) => (
