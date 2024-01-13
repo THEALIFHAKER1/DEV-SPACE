@@ -1,8 +1,5 @@
 import React from "react";
 import AllProjects from "./components/AllProjects";
-import Search from "./components/Search";
-import PaginationControl from "./components/PaginationControl";
-import { start } from "repl";
 import { HeadingText } from "@/components/ui/heading-text";
 
 export const metadata = {
