@@ -13,8 +13,6 @@ export default function ProjectPage({
   const per_page = searchParams["per_page"] ?? 6;
   const limit = Number(per_page);
   const offset = (Number(page) - 1) * limit;
-  console.log("limit", limit);
-  console.log("offset", offset);
   return (
     <div>
       <h1>My GitHub Repositories</h1>

@@ -9,7 +9,7 @@ export default function Navbar() {
     <>
       <nav
         className="fixed w-full select-none bg-background "
-        style={{ width: "calc(100% - 50px)" }}
+        style={{ width: "calc(100% - 40px)" }}
       >
         <div className="flex justify-between ">
           <Logo />
