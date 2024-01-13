@@ -22,9 +22,12 @@ export default async function AllProjects() {
   const repositories = (await getRepositories()) as Repository[];
   // limit, offset
   return (
-    <div className="pb-20 md:pb-0 grid w-full grid-cols-1 gap-3 md:grid-cols-3">
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3">
       {repositories.map((repo) => (
-        <Card key={repo.id} className="flex flex-col justify-between">
+        <Card
+          key={repo.id}
+          className="flex flex-col justify-between rounded-xl border-2 border-zinc-500 bg-background dark:border-zinc-400"
+        >
           <CardHeader>
             <div className="flex justify-between">
               <a

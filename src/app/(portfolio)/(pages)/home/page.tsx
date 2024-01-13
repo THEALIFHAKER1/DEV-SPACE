@@ -5,10 +5,12 @@ import { Box } from "lucide-react";
 
 function HomePage() {
   return (
-    <div>
-      <Hero />
-      {/* <Experience /> */}
-    </div>
+    <main className="flex flex-col py-8">
+      <div className="space-y-4">
+        <Hero />
+        {/* <Experience /> */}
+      </div>
+    </main>
   );
 }
 

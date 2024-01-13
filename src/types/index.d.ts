@@ -25,6 +25,18 @@ export type Repository = {
   stargazers_count: number;
 };
 
+// Wakatime
+type Languages = {
+  name: string;
+  total_seconds: number;
+  percent: number;
+  digital: string;
+  decimal: string;
+  text: string;
+  hours: number;
+  minutes: number;
+};
+
 // Discord
 type DiscordUser = {
   id: string;

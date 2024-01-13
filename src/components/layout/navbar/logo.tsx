@@ -16,17 +16,26 @@ function Logo() {
 
   return (
     <>
-      <div className="hidden md:block">
-        <p>THEALIFHAKER1( );</p>
-        <Link href="/" className="flex">
-          {`~`}{" "}
-          <Typewriter
-            options={{
-              strings: typewriterStrings,
-              autoStart: true,
-            }}
-          />
-        </Link>
+      <div className="hidden md:flex space-x-4">
+        <Image
+          src={LOGO}
+          alt="logo"
+          width={50}
+          height={50}
+          className="filter grayscale dark:filter-none min-w-[50px] min-h-[50px]"
+        />
+        <div>
+          <p>THEALIFHAKER1( );</p>
+          <Link href="/" className="flex">
+            {`~`}{" "}
+            <Typewriter
+              options={{
+                strings: typewriterStrings,
+                autoStart: true,
+              }}
+            />
+          </Link>
+        </div>
       </div>
       <div className="md:hidden block">
         <Link href="/">

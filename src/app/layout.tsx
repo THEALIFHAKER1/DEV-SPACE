@@ -57,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-5`}>
+      <body className={`${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -65,7 +65,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="pt-20">{children}</div>
+          <div className="pt-20 px-5 pb-20 md:pb-0">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

@@ -29,6 +29,7 @@
     "react-fast-marquee": "^1.6.2",
     "react-icons": "^4.12.0",
     "react-use-websocket": "^4.5.0",
+    "recharts": "^2.10.4",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "typewriter-effect": "^2.21.0",
