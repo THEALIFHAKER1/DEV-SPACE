@@ -7,8 +7,11 @@ import Logo from "./logo";
 export default function Navbar() {
   return (
     <>
-      <nav className="select-none bg-background">
-        <div className="flex justify-between">
+      <nav
+        className="fixed w-full select-none bg-background "
+        style={{ width: "calc(100% - 50px)" }}
+      >
+        <div className="flex justify-between ">
           <Logo />
           <div className="flex items-center gap-4">
             <ul className=" md:flex hidden items-center space-x-4 text-sm text-zinc-500 dark:text-zinc-400">
