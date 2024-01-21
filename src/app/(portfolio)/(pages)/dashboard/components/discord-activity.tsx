@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import * as React from "react";
@@ -41,7 +42,6 @@ export function DiscordActivity() {
     if (readyState === ReadyState.OPEN) {
       initMessage();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readyState, userId, sendMessage]);
 
   const handleEvent = (messageData: MessageData) => {
@@ -101,7 +101,7 @@ export function DiscordActivity() {
                 <>
                   {/* Display no activities */}
                   <DiscordStatus data={data.data} />
-                  <div className="flex flex-grow flex-col gap-2">
+                  <div className="flex flex-grow flex-col gap-4">
                     {!data ||
                     !data.data ||
                     !data.data.activities ||
@@ -116,7 +116,7 @@ export function DiscordActivity() {
                         {/* Render custom status with no other activities */}
                         {data.data.activities.length === 1 &&
                         data.data.activities[0].name === "Custom Status" ? (
-                          <>
+                          <div className=" w-[17rem]">
                             {data?.data?.activities?.map(
                               (activity: Activity, index: number) =>
                                 activity.name === "Custom Status" && (
@@ -128,14 +128,14 @@ export function DiscordActivity() {
                                   </p>
                                 )
                             )}
-                            <Alert className="bg-muted">
+                            <Alert className="bg-none border-none">
                               <AlertDescription>
                                 No activities currently.
                               </AlertDescription>
                             </Alert>
-                          </>
+                          </div>
                         ) : (
-                          <>
+                          <div className="w-[17rem]">
                             {/* Render custom status including other activities */}
                             {data?.data?.activities?.map(
                               (activity: Activity, index: number) =>
@@ -158,14 +158,14 @@ export function DiscordActivity() {
                                   />
                                 )
                             )}
-                          </>
+                          </div>
                         )}
                       </>
                     )}
                   </div>
                 </>
               ) : (
-                <div className="flex gap-2">
+                <div className="flex gap-4">
                   <Skeleton className="h-10 w-10 rounded-full" />
                   <Skeleton className="h-10 w-[14rem]" />
                 </div>
