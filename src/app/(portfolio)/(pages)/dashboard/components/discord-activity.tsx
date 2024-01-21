@@ -41,6 +41,7 @@ export function DiscordActivity() {
     if (readyState === ReadyState.OPEN) {
       initMessage();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readyState, userId, sendMessage]);
 
   const handleEvent = (messageData: MessageData) => {
