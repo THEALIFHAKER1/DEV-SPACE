@@ -17,7 +17,7 @@ export default function DashboardPage() {
         </HeadingText>
         <div className="flex flex-wrap gap-2">
           <DiscordActivity />
-          <CodeActivity />
+          {/* <CodeActivity /> */}
         </div>
       </div>
     </main>
