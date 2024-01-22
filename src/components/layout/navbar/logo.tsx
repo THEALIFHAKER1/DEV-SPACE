@@ -16,15 +16,17 @@ function Logo() {
 
   return (
     <>
-      <div className="hidden md:flex space-x-4">
-        <Image
-          src={LOGO}
-          alt="logo"
-          width={50}
-          height={50}
-          className="filter grayscale dark:filter-none min-w-[50px] min-h-[50px]"
-        />
-        <div>
+      <div className="flex space-x-4">
+        <Link href="guestbook">
+          <Image
+            src={LOGO}
+            alt="logo"
+            width={50}
+            height={50}
+            className="filter grayscale dark:filter-none min-w-[50px] min-h-[50px]"
+          />
+        </Link>
+        <div className="hidden md:block">
           <p>THEALIFHAKER1( );</p>
           <Link href="/" className="flex">
             {`~`}{" "}
@@ -36,17 +38,6 @@ function Logo() {
             />
           </Link>
         </div>
-      </div>
-      <div className="md:hidden block">
-        <Link href="/">
-          <Image
-            src={LOGO}
-            alt="logo"
-            width={50}
-            height={50}
-            className="filter grayscale dark:filter-none min-w-[50px] min-h-[50px]"
-          />
-        </Link>
       </div>
     </>
   );
