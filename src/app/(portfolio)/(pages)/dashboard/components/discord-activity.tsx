@@ -106,7 +106,7 @@ export function DiscordActivity() {
                     !data.data ||
                     !data.data.activities ||
                     data.data.activities.length === 0 ? (
-                      <Alert className="bg-muted">
+                      <Alert className="bg-none border-none w-[17rem]">
                         <AlertDescription>
                           No activities currently.
                         </AlertDescription>
