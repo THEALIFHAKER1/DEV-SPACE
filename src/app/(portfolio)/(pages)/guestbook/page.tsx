@@ -29,7 +29,7 @@ export default function GuestbookPage() {
 async function GuestbookForm() {
   //   let session = await auth();
 
-  return true ? (
+  return false ? (
     <>
       <Form />
     </>
@@ -68,9 +68,11 @@ async function GuestbookEntries() {
           </span>
         </div>
       </div>
-      <div>
-        <Button variant="outline">Delete</Button>
-      </div>
+      {false ?? (
+        <div>
+          <Button variant="outline">Delete</Button>
+        </div>
+      )}
     </div>
   ));
 }
