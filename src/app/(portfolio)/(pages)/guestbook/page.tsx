@@ -28,7 +28,11 @@ async function GuestbookForm() {
 
   return true ? (
     <>
-      <div className={" dark:bg-neutral-800 bg-neutral-200 p-5 rounded-lg"}>
+      <div
+        className={
+          " dark:bg-neutral-800 bg-neutral-200 p-3 rounded-lg border border-black dark:border-neutral-700"
+        }
+      >
         <div className="flex gap-2">
           <input
             type="text"
@@ -103,7 +107,7 @@ async function GuestbookEntries() {
   return entries.map((entry) => (
     <div
       key={entry.id}
-      className="flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3"
+      className="flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3 "
     >
       <div className="w-full text-sm break-words">
         <span className="text-neutral-600 dark:text-neutral-400 mr-1">

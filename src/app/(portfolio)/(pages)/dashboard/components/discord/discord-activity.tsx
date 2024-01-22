@@ -76,7 +76,7 @@ export function DiscordActivity() {
   };
 
   return (
-    <Card className="w-full md:w-auto border-2 border-zinc-500 bg-background dark:border-zinc-400 md:max-w-[400px] pr-20">
+    <Card className="w-full md:w-auto dark:bg-neutral-800 bg-neutral-200 md:max-w-[400px] pr-20 border border-black dark:border-neutral-700">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">Discord activity</CardTitle>
       </CardHeader>
@@ -106,7 +106,7 @@ export function DiscordActivity() {
                     !data.data ||
                     !data.data.activities ||
                     data.data.activities.length === 0 ? (
-                      <Alert className="bg-none border-none w-[17rem]">
+                      <Alert className=" dark:bg-neutral-800 bg-neutral-200 border-none w-[17rem]">
                         <AlertDescription>
                           No activities currently.
                         </AlertDescription>
@@ -128,7 +128,7 @@ export function DiscordActivity() {
                                   </p>
                                 )
                             )}
-                            <Alert className="bg-none border-none">
+                            <Alert className="dark:bg-neutral-800 bg-neutral-200 border-none">
                               <AlertDescription>
                                 No activities currently.
                               </AlertDescription>

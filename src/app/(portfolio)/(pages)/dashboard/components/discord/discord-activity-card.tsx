@@ -21,7 +21,7 @@ export function DiscordActivityCard({
   data,
 }: DiscordActivityCardProps) {
   return (
-    <Alert className="w-full flex items-center gap-3 border-2 border-none border-zinc-500 bg-background dark:border-zinc-400 flex-row text-left">
+    <Alert className="w-full flex items-center gap-3 dark:bg-neutral-800 bg-neutral-200 flex-row text-left border-none">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -92,7 +92,7 @@ export function DiscordActivityCard({
             />
           ) : null}
         </AlertDescription>
-        <AlertDescription className="line-clamp-1">
+        <AlertDescription className="line-clamp-1 ">
           {activity.timestamps && activity.timestamps.start ? (
             <ElapsedTime unixTimestamp={activity.timestamps.start} />
           ) : null}

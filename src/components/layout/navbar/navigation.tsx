@@ -16,7 +16,7 @@ function Navigation() {
     return navigationLinks.map((link) => (
       <li
         key={link.path}
-        className={`hover:underline ${
+        className={`hover:text-primary ${
           pathname === link.path ? "text-primary" : ""
         }`}
       >
