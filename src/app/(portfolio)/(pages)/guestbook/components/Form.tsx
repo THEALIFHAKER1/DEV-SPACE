@@ -1,5 +1,7 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { SignOut } from "./button";
 
 function Form() {
   return (
@@ -16,7 +18,7 @@ function Form() {
           className="px-2 w-full text-sm rounded-lg h-10 bg-background "
         />
         <Button variant="outline">Sent</Button>
-        <Button variant="outline">Sign out</Button>
+        <SignOut />
       </div>
       <p className={`text-red-600 text-md font-bold text-sm hidden `}>
         Message is empty

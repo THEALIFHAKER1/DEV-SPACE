@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { HeadingText } from "@/components/ui/heading-text";
 import { Suspense } from "react";
-import { BsGithub, BsGoogle } from "react-icons/bs";
-import SignIn from "./components/SignIn";
+import { SignIn } from "./components/button";
 import Form from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
-// import { auth } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 
 export const metadata = {
   title: "Guestbook",
@@ -41,22 +40,22 @@ async function GuestbookForm() {
 }
 
 async function GuestbookEntries() {
-  // let entries = await getGuestbookEntries();
+  let entries = await getGuestbookEntries();
 
-  const entries = [
-    {
-      id: 1,
-      name: "John Doe",
-      message: "Hello, world!",
-      date: new Date().toISOString(),
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      message: "Nice to meet you!",
-      date: new Date().toISOString(),
-    },
-  ];
+  // const entries = [
+  //   {
+  //     id: 1,
+  //     name: "John Doe",
+  //     message: "Hello, world!",
+  //     date: new Date().toISOString(),
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Jane Smith",
+  //     message: "Nice to meet you!",
+  //     date: new Date().toISOString(),
+  //   },
+  // ];
 
   if (entries.length === 0) {
     return null;
