@@ -5,6 +5,7 @@ import { BsGithub, BsGoogle } from "react-icons/bs";
 import SignIn from "./components/SignIn";
 import Form from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
+// import { auth } from "@/lib/auth";
 export const metadata = {
   title: "Guestbook",
   description: "Sign my guestbook and leave your mark.",
@@ -27,7 +28,7 @@ export default function GuestbookPage() {
 }
 
 async function GuestbookForm() {
-  //   let session = await auth();
+  // let session = await auth();
 
   return false ? (
     <>
@@ -39,7 +40,22 @@ async function GuestbookForm() {
 }
 
 async function GuestbookEntries() {
-  let entries = await getGuestbookEntries();
+  // let entries = await getGuestbookEntries();
+
+  const entries = [
+    {
+      id: 1,
+      name: "John Doe",
+      message: "Hello, world!",
+      date: new Date().toISOString(),
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      message: "Nice to meet you!",
+      date: new Date().toISOString(),
+    },
+  ];
 
   if (entries.length === 0) {
     return null;
