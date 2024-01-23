@@ -21,9 +21,7 @@ export default function ProjectPage({
     <main className="flex flex-col py-8">
       <div className="space-y-4">
         <HeadingText>My GitHub Repositories</HeadingText>
-        <Suspense>
-          <SearchProjects placeholder={"Search for a repository"} />
-        </Suspense>
+        <SearchProjects placeholder={"Search for a repository"} />
         <AllProjects filter={searchTerm} />
       </div>
     </main>
