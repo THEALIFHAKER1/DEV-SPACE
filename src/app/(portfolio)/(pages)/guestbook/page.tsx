@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { SignIn } from "./components/button";
 import Form from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
-import { auth } from "@/lib/auth";
+// import { auth } from "@/lib/auth";
 
 export const metadata = {
   title: "Guestbook",
