@@ -9,7 +9,6 @@ export async function getRepositories(): Promise<Repository[]> {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-    cache: "no-store",
   });
 
   if (!response.ok) {
