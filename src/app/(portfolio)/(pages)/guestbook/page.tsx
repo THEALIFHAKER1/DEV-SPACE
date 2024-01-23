@@ -6,6 +6,7 @@ import SignIn from "./components/SignIn";
 import Form from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
 // import { auth } from "@/lib/auth";
+
 export const metadata = {
   title: "Guestbook",
   description: "Sign my guestbook and leave your mark.",

@@ -4,6 +4,7 @@ import { DiscordActivity } from "./components/discord/discord-activity";
 import CodeActivity from "./components/code/CodeActivity";
 import BlankActivity from "./components/blank/blank";
 import LongBlankActivity from "./components/blank/longBlank";
+
 export const metadata = {
   title: "Dashboard",
   description: "Statistics about my activities",
