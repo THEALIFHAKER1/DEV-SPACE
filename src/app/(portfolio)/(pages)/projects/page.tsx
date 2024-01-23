@@ -1,6 +1,7 @@
 import React from "react";
 import AllProjects from "./components/AllProjects";
 import { HeadingText } from "@/components/ui/heading-text";
+import SearchProjects from "../../../../components/ui/Search";
 
 export const metadata = {
   title: "Projects",
@@ -10,13 +11,18 @@ export const metadata = {
 export default function ProjectPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams?: {
+    Search?: string;
+  };
 }) {
+  const searchTerm = searchParams?.Search || "";
+
   return (
     <main className="flex flex-col py-8">
       <div className="space-y-4">
         <HeadingText>My GitHub Repositories</HeadingText>
-        <AllProjects />
+        <SearchProjects placeholder={"Search for a repository"} />
+        <AllProjects filter={searchTerm} />
       </div>
     </main>
   );

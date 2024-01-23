@@ -12,15 +12,17 @@ import {
 import { ExternalLink, Star } from "lucide-react";
 import { FaCodeFork } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
-import SearchProjects from "./SearchProjects";
+import SearchProjects from "../../../../../components/ui/Search";
 
-export default async function AllProjects() {
+export default async function AllProjects({ filter }: { filter: string }) {
   const repositories = (await getRepositories()) as Repository[];
+  const filteredRepositories = repositories.filter((repo) =>
+    repo.name.toLowerCase().includes(filter?.toLowerCase() || "")
+  );
   return (
     <>
-      <SearchProjects />
       <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3">
-        {repositories.map((repo) => (
+        {filteredRepositories.map((repo) => (
           <Card
             key={repo.id}
             className="flex flex-col justify-between rounded-xl dark:bg-neutral-800 bg-neutral-200 border border-black dark:border-neutral-700"
