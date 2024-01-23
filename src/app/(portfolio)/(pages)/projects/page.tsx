@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import AllProjects from "./components/AllProjects";
 import { HeadingText } from "@/components/ui/heading-text";
 import SearchProjects from "../../../../components/ui/Search";
@@ -21,7 +21,9 @@ export default function ProjectPage({
     <main className="flex flex-col py-8">
       <div className="space-y-4">
         <HeadingText>My GitHub Repositories</HeadingText>
-        <SearchProjects placeholder={"Search for a repository"} />
+        <Suspense>
+          <SearchProjects placeholder={"Search for a repository"} />
+        </Suspense>
         <AllProjects filter={searchTerm} />
       </div>
     </main>
