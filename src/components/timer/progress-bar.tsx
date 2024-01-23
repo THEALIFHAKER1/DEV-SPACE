@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Progress } from "@/components/ui/progress";
-import { calculateProgress } from "@/lib/time";
+import { calculateProgress } from "@/lib/utils/time";
 
 interface SpotifyBarProps {
   start: number;
