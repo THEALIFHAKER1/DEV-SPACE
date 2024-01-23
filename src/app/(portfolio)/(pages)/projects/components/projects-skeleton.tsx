@@ -1,11 +1,11 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardFooter, CardHeader } from "@/components/ui/card";
-import SearchProjects from "../../../../../components/ui/Search";
+import { Search } from "../../../../../components/ui/Search";
 
 export function ProjectsSkeleton() {
   return (
     <>
-      <SearchProjects placeholder={"Search for a repository"} />
+      <Search placeholder={"Search for a repository"} />
       <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3 ">
         {Array.from({ length: 9 }).map((_, index) => (
           <Card

@@ -11,8 +11,6 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 import { FaCodeFork } from "react-icons/fa6";
-import { Button } from "@/components/ui/button";
-import SearchProjects from "../../../../../components/ui/Search";
 
 export default async function AllProjects({ filter }: { filter: string }) {
   const repositories = (await getRepositories()) as Repository[];
