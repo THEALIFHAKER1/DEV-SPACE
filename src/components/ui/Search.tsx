@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 export default function SearchProjects({
@@ -34,14 +34,16 @@ export default function SearchProjects({
       }
     >
       <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder={placeholder}
-          aria-label="Search for a repository"
-          className="px-2 w-full text-sm rounded-lg h-10 bg-background "
-          onChange={(e) => setSearchTerm(e.target.value)}
-          value={searchTerm || ""}
-        />
+        <Suspense>
+          <input
+            type="text"
+            placeholder={placeholder}
+            aria-label="Search for a repository"
+            className="px-2 w-full text-sm rounded-lg h-10 bg-background "
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm || ""}
+          />
+        </Suspense>
         <Button variant="outline" onClick={handleSearch}>
           Search
         </Button>
