@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { HeadingText } from "@/components/ui/heading-text";
 import { Suspense } from "react";
-import { SignIn } from "./components/button";
-import Form from "./components/Form";
+import { FormIn, FormOut } from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
+import { GuestBookSkeleton } from "./components/guestbookkeleton";
 // import { auth } from "@/lib/auth";
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default function GuestbookPage() {
           GuestBook
         </HeadingText>
         <GuestbookForm />
-        <Suspense>
+        <Suspense fallback={<GuestBookSkeleton />}>
           <GuestbookEntries />
         </Suspense>
       </div>
@@ -30,12 +30,14 @@ export default function GuestbookPage() {
 async function GuestbookForm() {
   // let session = await auth();
 
-  return false ? (
+  return true ? (
     <>
-      <Form />
+      <FormIn />
     </>
   ) : (
-    <SignIn />
+    <>
+      <FormOut />
+    </>
   );
 }
 
