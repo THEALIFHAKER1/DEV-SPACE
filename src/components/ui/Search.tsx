@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import React, { Suspense, useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import revalidateAllRepositories from "@/lib/actions/AllRepository";
 
 export function SearchBar({ placeholder }: { placeholder: string }) {
   const SearchParams = useSearchParams();
@@ -21,6 +22,7 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
       params.delete("Search");
     }
     replace(`${pathname}?${params.toString()}`);
+    revalidateAllRepositories();
   }
 
   return (

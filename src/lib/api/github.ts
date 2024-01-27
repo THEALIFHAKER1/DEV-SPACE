@@ -9,6 +9,9 @@ export async function getRepositories(): Promise<Repository[]> {
     headers: {
       Authorization: `Bearer ${token}`,
     },
+    next: {
+      tags: ["AllRepositories"],
+    },
   });
 
   if (!response.ok) {
