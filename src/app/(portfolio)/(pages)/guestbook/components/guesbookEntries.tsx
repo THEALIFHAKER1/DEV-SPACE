@@ -2,9 +2,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { getAllGuestBookEntries } from "@/lib/db/data/guestbook";
 import { FaUser } from "react-icons/fa";
+import DeleteButton from "./delete";
+import { auth } from "@/auth";
 
 export default async function GuestbookEntries() {
   let entries = await getAllGuestBookEntries();
+  let session = await auth();
+  let email = session?.user?.email;
+  const isOwner = email === "alifhaker1@gmail.com";
 
   if (!entries) return null;
 
@@ -36,11 +41,7 @@ export default async function GuestbookEntries() {
               </span>
             </div>
           </div>
-          {false ?? (
-            <div>
-              <Button variant="outline">Delete</Button>
-            </div>
-          )}
+          {isOwner && <DeleteButton id={entry.id} />}
         </div>
       ))}
     </div>
