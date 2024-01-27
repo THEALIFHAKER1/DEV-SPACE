@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { FormIn, FormOut } from "./components/Form";
 import { getGuestbookEntries } from "@/lib/db/queries";
 import { GuestBookSkeleton } from "./components/guestbookkeleton";
-// import { auth } from "@/lib/auth";
+import { auth } from "@/auth";
 
 export const metadata = {
   title: "Guestbook",
@@ -28,9 +28,9 @@ export default function GuestbookPage() {
 }
 
 async function GuestbookForm() {
-  // let session = await auth();
+  let session = await auth();
 
-  return true ? (
+  return session?.user ? (
     <>
       <FormIn />
     </>

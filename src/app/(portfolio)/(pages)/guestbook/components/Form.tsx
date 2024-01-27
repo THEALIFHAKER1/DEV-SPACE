@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { SignIn, SignOut } from "./button";
 import { useRef } from "react";
-import { saveGuestbookEntry } from "@/lib/db/actions";
+import { saveGuestbookEntry } from "@/lib/actions/actions";
 import { useFormStatus } from "react-dom";
 
 export function FormIn() {
@@ -25,6 +25,7 @@ export function FormIn() {
         <div className="flex gap-2">
           <input
             type="text"
+            name="message"
             placeholder="Your message"
             aria-label="Type your message here"
             className="px-2 w-full text-sm rounded-lg h-10 bg-background "

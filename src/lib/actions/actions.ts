@@ -1,9 +1,9 @@
 "use server";
 
-// import { auth } from "app/auth";
 import { type Session } from "next-auth";
-import { sql } from "./postgres";
+import { sql } from "../db/postgres";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
+import { auth } from "@/auth";
 
 export async function increment(slug: string) {
   noStore();
@@ -16,8 +16,7 @@ export async function increment(slug: string) {
 }
 
 async function getSession(): Promise<Session> {
-  // let session = await auth();
-  let session = {} as Session;
+  let session = await auth();
   if (!session || !session.user) {
     throw new Error("Unauthorized");
   }
@@ -28,18 +27,18 @@ async function getSession(): Promise<Session> {
 export async function saveGuestbookEntry(formData: FormData) {
   let session = await getSession();
   let email = session.user?.email as string;
-  let created_by = session.user?.name as string;
+  let name = session.user?.name as string;
 
   if (!session.user) {
     throw new Error("Unauthorized");
   }
 
-  let entry = formData.get("entry")?.toString() || "";
-  let body = entry.slice(0, 500);
+  let entry = formData.get("message")?.toString() || "";
+  let message = entry.slice(0, 500);
 
   await sql`
-    INSERT INTO guestbook (email, body, created_by, created_at)
-    VALUES (${email}, ${body}, ${created_by}, NOW())
+    INSERT INTO guestbook (email, message, name, date)
+    VALUES (${email}, ${message}, ${name}, NOW())
   `;
 
   revalidatePath("/guestbook");
@@ -54,7 +53,7 @@ export async function saveGuestbookEntry(formData: FormData) {
       from: "guestbook@leerob.io",
       to: "me@leerob.io",
       subject: "New Guestbook Entry",
-      html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
+      html: `<p>Email: ${email}</p><p>Message: ${message}</p>`,
     }),
   });
 
