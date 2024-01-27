@@ -36,7 +36,7 @@ export function FormIn() {
   }
 
   return (
-    <div className="flex dark:bg-neutral-800 bg-neutral-200 p-3 rounded-lg border border-black dark:border-neutral-700 w-fit">
+    <div className="flex dark:bg-neutral-800 bg-neutral-200 p-3 rounded-lg border border-black dark:border-neutral-700 w-fit gap-2">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -62,11 +62,7 @@ export function FormIn() {
 
 export function FormOut() {
   return (
-    <div
-      className={
-        " dark:bg-neutral-800 bg-neutral-200 p-3 rounded-lg border border-black dark:border-neutral-700 w-fit"
-      }
-    >
+    <div className="dark:bg-neutral-800 bg-neutral-200 p-3 rounded-lg border border-black dark:border-neutral-700 w-fit">
       <div className="flex gap-2">
         <SignIn />
       </div>

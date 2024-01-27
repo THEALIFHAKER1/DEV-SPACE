@@ -26,7 +26,11 @@ export function SignIn() {
 
 export function SignOut() {
   return (
-    <Button variant="outline" onClick={() => signOut()}>
+    <Button
+      variant="outline"
+      onClick={() => signOut()}
+      className="hover:bg-red-500 hover:text-white"
+    >
       Sign out
     </Button>
   );
