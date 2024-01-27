@@ -1,7 +1,6 @@
 import React from "react";
 import { HeadingText } from "../../../../components/ui/heading-text";
 import { DiscordActivity } from "./components/discord/discord-activity";
-import CodeActivity from "./components/code/CodeActivity";
 import BlankActivity from "./components/blank/blank";
 import LongBlankActivity from "./components/blank/longBlank";
 
@@ -19,8 +18,8 @@ export default function DashboardPage() {
         </HeadingText>
         <div className="flex flex-wrap gap-2">
           <DiscordActivity />
-          {/* <BlankActivity />
-          <LongBlankActivity /> */}
+          <BlankActivity />
+          <LongBlankActivity />
         </div>
       </div>
     </main>
