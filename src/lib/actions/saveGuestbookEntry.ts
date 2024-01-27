@@ -46,7 +46,7 @@ export default async function saveGuestbookEntry(
   });
 
   revalidatePath("/guestbook");
-  sendGuestbookEntryEmail(email, message, date);
+  // sendGuestbookEntryEmail(email, message, date);
 
   return {
     success: "Message sent!",
