@@ -1,15 +1,26 @@
 "use client";
 import React from "react";
-import { BsGithub } from "react-icons/bs";
 import { signIn, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export function SignIn() {
+  function clickHandler(provider: "google" | "github") {
+    signIn(provider);
+  }
+
   return (
-    <Button onClick={() => signIn("github")}>
-      <BsGithub />
-      <span className="mt-[0.5px]">Github</span>
-    </Button>
+    <>
+      <Button onClick={() => clickHandler("github")}>
+        <FaGithub className="h-5 mr-2" />
+        <span className="mt-[0.5px]">Github</span>
+      </Button>
+      <Button onClick={() => clickHandler("google")}>
+        <FcGoogle className="h-5 mr-2" />
+        <span className="mt-[0.5px]">Google</span>
+      </Button>
+    </>
   );
 }
 
