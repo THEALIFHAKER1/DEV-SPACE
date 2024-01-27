@@ -1,15 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import deleteGuestbookEntry from "@/lib/actions/deleteGuestbookEntry";
-import { startTransition } from "react";
+import { useTransition } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Form } from "@/components/ui/form";
 
 interface DeleteButtonProps {
   id: number;
 }
 
 export default function DeleteButton({ id }: DeleteButtonProps) {
-  function handleOnclick(values: { id: number }) {
+  const [isPending, startTransition] = useTransition();
+  const form = useForm();
+
+  async function handleOnclick(values: { id: number }) {
     startTransition(() => {
       deleteGuestbookEntry(values).then(
         (data: { success: string; error?: string }) => {
@@ -23,15 +28,18 @@ export default function DeleteButton({ id }: DeleteButtonProps) {
       );
     });
   }
+
   return (
-    <form onSubmit={() => handleOnclick({ id })}>
+    <Form {...form}>
       <Button
+        onSubmit={() => handleOnclick({ id })}
+        disabled={isPending}
         type="submit"
         variant="outline"
         className="hover:bg-red-500 hover:text-white"
       >
         Delete
       </Button>
-    </form>
+    </Form>
   );
 }
