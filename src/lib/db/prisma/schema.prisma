@@ -10,6 +10,7 @@ datasource db {
 
 model guestbook {
   id      Int      @id @default(autoincrement())
+  image   String?
   email   String   @db.VarChar(255)
   name    String   @db.VarChar(255)
   message String

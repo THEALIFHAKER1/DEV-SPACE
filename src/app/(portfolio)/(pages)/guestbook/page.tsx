@@ -5,6 +5,8 @@ import { FormIn, FormOut } from "./components/Form";
 import { getAllGuestBookEntries } from "@/lib/db/data/guestbook";
 import { GuestBookSkeleton } from "./components/guestbookkeleton";
 import { auth } from "@/auth";
+import { FaUser } from "react-icons/fa";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const metadata = {
   title: "Guestbook",
@@ -51,8 +53,14 @@ async function GuestbookEntries() {
       {entries.map((entry) => (
         <div
           key={entry.id}
-          className="flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3 "
+          className="flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3 gap-2 items-center"
         >
+          <Avatar className="w-10 h-10">
+            <AvatarFallback>
+              <FaUser />
+            </AvatarFallback>
+            <AvatarImage src={entry?.image || ""} />
+          </Avatar>
           <div className="w-full text-sm break-words">
             <span className="text-neutral-600 dark:text-neutral-400 mr-1">
               {entry.name}:

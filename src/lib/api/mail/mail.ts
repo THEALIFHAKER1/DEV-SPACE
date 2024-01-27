@@ -14,7 +14,7 @@ export async function sendGuestbookEntryEmail(
   await resend.emails.send({
     from: `${emailDomain}`,
     to: `${myEmail}`,
-    subject: "2FA Code",
+    subject: "New Guestbook Entry",
     html: `<p>Email: ${email}</p><p>Message: ${message}</p> <p>Date: ${date}</p>`,
   });
 }

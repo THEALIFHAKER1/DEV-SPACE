@@ -21,8 +21,11 @@ export default async function saveGuestbookEntry(
   formData: z.infer<typeof GuestBookSchemaEntry>
 ) {
   let session = await getSession();
+  let image = session.user?.image as string;
   let email = session.user?.email as string;
   let name = session.user?.name as string;
+  const date = new Date();
+
   const validatedFields = GuestBookSchemaEntry.safeParse(formData);
 
   if (!validatedFields.success) {
@@ -31,10 +34,10 @@ export default async function saveGuestbookEntry(
     };
   }
   const { message } = validatedFields.data;
-  const date = new Date();
 
   await db.guestbook.create({
     data: {
+      image,
       email,
       message,
       name,
