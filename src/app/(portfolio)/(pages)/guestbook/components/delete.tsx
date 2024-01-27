@@ -31,15 +31,19 @@ export default function DeleteButton({ id }: DeleteButtonProps) {
 
   return (
     <Form {...form}>
-      <Button
-        onSubmit={() => handleOnclick({ id })}
-        disabled={isPending}
-        type="submit"
-        variant="outline"
-        className="hover:bg-red-500 hover:text-white"
+      <form
+        onSubmit={form.handleSubmit(() => handleOnclick({ id }))}
+        className="relative w-full flex gap-2"
       >
-        Delete
-      </Button>
+        <Button
+          disabled={isPending}
+          type="submit"
+          variant="outline"
+          className="hover:bg-red-500 hover:text-white"
+        >
+          Delete
+        </Button>
+      </form>
     </Form>
   );
 }
