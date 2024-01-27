@@ -2,7 +2,6 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import React from "react";
-import { ResponsiveContainer } from "recharts";
 
 function longBlank() {
   return (
