@@ -31,10 +31,7 @@ export default function DeleteButton({ id }: DeleteButtonProps) {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(() => handleOnclick({ id }))}
-        className="relative w-full flex gap-2"
-      >
+      <form onSubmit={form.handleSubmit(() => handleOnclick({ id }))}>
         <Button
           disabled={isPending}
           type="submit"
