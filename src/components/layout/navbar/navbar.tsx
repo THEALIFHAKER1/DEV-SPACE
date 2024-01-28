@@ -1,20 +1,27 @@
 import { ThemeToggler } from "../../theme/ThemeToggler/ThemeToggler";
 import NowPlaying from "../../Music/Spotify/NowPlaying";
+import LiveIsland from "@/components/customUi/dynamicIsland/LiveIsland";
 // import { siteConfig } from "@/../config/site";
 import Navigation from "./navigation";
 import Logo from "./logo";
+import DynamicIsland from "@/components/customUi/dynamicIsland/DynamicIsland";
 
 export default function Navbar() {
   return (
     <>
       <nav className="z-50 fixed w-full select-none bg-background p-5">
-        <div className="flex justify-between ">
+        <div className="flex justify-between">
           <Logo />
+          <div className="md:hidden">
+            <DynamicIsland />
+          </div>
           <div className="flex items-center gap-4">
             <ul className=" md:flex hidden items-center space-x-4 text-sm text-zinc-500 dark:text-zinc-400">
               <Navigation />
             </ul>
-            <NowPlaying />
+            <div className="hidden md:block">
+              <NowPlaying />
+            </div>
             <ThemeToggler />
           </div>
         </div>
