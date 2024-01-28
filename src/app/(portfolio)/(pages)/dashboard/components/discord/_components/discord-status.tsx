@@ -18,7 +18,7 @@ export function DiscordStatus(data: DiscordApiResponse) {
   const statusInfo = status(data.data.discord_status);
 
   return (
-    <div className=" hovers flex flex-col-reverse justify-end items-end w-fit bg-background p-3 rounded-xl">
+    <div className=" flex flex-col-reverse justify-end items-end w-fit bg-background p-3 rounded-xl">
       <div className="flex gap-2">
         <div className="flex items-center justify-center">
           <Avatar className="w-14 h-14 rounded-md">

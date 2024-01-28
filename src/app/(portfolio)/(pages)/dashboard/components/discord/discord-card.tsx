@@ -74,29 +74,38 @@ export default function DiscordCard() {
   };
 
   return (
-    <Card className="hovers w-full dark:bg-neutral-800 bg-neutral-200 md:w-[400px] border border-black dark:border-neutral-700">
-      <CardHeader>
-        <CardTitle className="text-sm font-medium">Discord activity</CardTitle>
-      </CardHeader>
-      <CardContent>
-        {!data ? (
-          <DiscordSkeleton />
-        ) : (
-          <motion.div
-            initial={{ height: 80 }}
-            animate={{ height: "fit-content" }}
-            transition={{ duration: 0.5 }}
-            style={{ overflow: "hidden" }}
-          >
-            {data.data && (
-              <div className="">
-                <DiscordStatus data={data.data} />
-                <DiscordActivity data={data.data} />
-              </div>
-            )}
-          </motion.div>
-        )}
-      </CardContent>
-    </Card>
+    <motion.div
+      initial={{ height: 80 }}
+      animate={{ height: "fit-content" }}
+      transition={{ duration: 0.5 }}
+      style={{ overflow: "hidden" }}
+    >
+      <Card className="hovers w-full dark:bg-neutral-800 bg-neutral-200 md:w-[400px] border border-black dark:border-neutral-700">
+        <CardHeader>
+          <CardTitle className="text-sm font-medium">
+            Discord activity
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {!data ? (
+            <DiscordSkeleton />
+          ) : (
+            <motion.div
+              initial={{ height: 80 }}
+              animate={{ height: "fit-content" }}
+              transition={{ duration: 0.5 }}
+              style={{ overflow: "hidden" }}
+            >
+              {data.data && (
+                <div className="">
+                  <DiscordStatus data={data.data} />
+                  <DiscordActivity data={data.data} />
+                </div>
+              )}
+            </motion.div>
+          )}
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

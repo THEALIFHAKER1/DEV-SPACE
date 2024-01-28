@@ -19,6 +19,7 @@ function Logo() {
       <div className="flex space-x-4">
         <Link href="guestbook">
           <Image
+            priority
             src={LOGO}
             alt="logo"
             width={50}
