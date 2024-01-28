@@ -74,7 +74,7 @@ export default function DiscordCard() {
   };
 
   return (
-    <Card className="hovers w-full dark:bg-neutral-800 bg-neutral-200 md:max-w-[400px] border border-black dark:border-neutral-700">
+    <Card className="hovers w-full dark:bg-neutral-800 bg-neutral-200 md:w-[400px] border border-black dark:border-neutral-700">
       <CardHeader>
         <CardTitle className="text-sm font-medium">Discord activity</CardTitle>
       </CardHeader>

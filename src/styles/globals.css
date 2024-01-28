@@ -75,8 +75,27 @@
   }
 }
 
-*::-webkit-scrollbar {
+*::-webkit-scrollbar-horizontal {
   display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Vertical scrollbar */
+::-webkit-scrollbar-track:vertical {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #5555552a;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  width: 10px;
+  background: #555;
+  border-radius: 100px;
 }
 
 .hovers:hover {
