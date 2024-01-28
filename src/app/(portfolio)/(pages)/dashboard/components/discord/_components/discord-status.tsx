@@ -18,10 +18,10 @@ export function DiscordStatus(data: DiscordApiResponse) {
   const statusInfo = status(data.data.discord_status);
 
   return (
-    <div className="flex gap-4 flex-row w-fit">
+    <div className="flex flex-col-reverse justify-end items-end w-fit bg-background p-3 rounded-xl">
       <div className="flex gap-2">
         <div className="flex items-center justify-center">
-          <Avatar>
+          <Avatar className="w-14 h-15 rounded-md">
             <AvatarImage
               src={`https://cdn.discordapp.com/avatars/${data.data.discord_user.id}/${data.data.discord_user.avatar}`}
             />
@@ -29,6 +29,13 @@ export function DiscordStatus(data: DiscordApiResponse) {
           </Avatar>
         </div>
         <div>
+          <div
+            className="flex items-center gap-2"
+            style={{ color: statusInfo.color }}
+          >
+            <BsDiscord />
+            <span className="text-sm">{statusInfo.text}</span>
+          </div>
           <div className="text-lg font-bold">
             {data.data.discord_user.global_name}
           </div>
@@ -36,13 +43,6 @@ export function DiscordStatus(data: DiscordApiResponse) {
             {data.data.discord_user.username}
           </p>
         </div>
-      </div>
-      <div
-        className="flex items-center gap-2"
-        style={{ color: statusInfo.color }}
-      >
-        <BsDiscord />
-        <span className="text-sm">{statusInfo.text}</span>
       </div>
     </div>
   );

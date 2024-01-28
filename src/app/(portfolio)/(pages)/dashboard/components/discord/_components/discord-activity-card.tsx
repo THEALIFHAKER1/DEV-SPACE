@@ -21,7 +21,7 @@ export function DiscordActivityCard({
   data,
 }: DiscordActivityCardProps) {
   return (
-    <Alert className="w-full flex items-center gap-3 dark:bg-neutral-800 bg-neutral-200 flex-row text-left border-none">
+    <Alert className="w-full flex items-center gap-3 flex-row text-left border-none">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -75,14 +75,16 @@ export function DiscordActivityCard({
         </Tooltip>
       </TooltipProvider>
       <div className="w-full">
-        <AlertTitle className="line-clamp-1">{activity.name}</AlertTitle>
-        <AlertDescription className="line-clamp-1">
+        <AlertTitle className="text-xs">{activity.name}</AlertTitle>
+        <AlertDescription className="text-xs text-muted-foreground">
           {activity.details || null}
         </AlertDescription>
-        <AlertDescription className="line-clamp-1">
-          {activity.state || null}
+        <AlertDescription className="text-xs text-muted-foreground">
+          {(!activity.assets?.large_image?.startsWith("spotify:") &&
+            activity.state) ||
+            null}
         </AlertDescription>
-        <AlertDescription className=" justify-center block">
+        <AlertDescription className="">
           {activity.timestamps &&
           activity.timestamps.start &&
           activity.timestamps.end ? (
@@ -92,7 +94,7 @@ export function DiscordActivityCard({
             />
           ) : null}
         </AlertDescription>
-        <AlertDescription className="line-clamp-1 ">
+        <AlertDescription className="text-xs text-muted-foreground">
           {activity.timestamps && activity.timestamps.start ? (
             <ElapsedTime unixTimestamp={activity.timestamps.start} />
           ) : null}

@@ -5,7 +5,7 @@ import { DiscordApiResponse, Activity } from "@/types";
 
 export default function discordActivity(data: DiscordApiResponse) {
   return (
-    <div>
+    <div className="">
       {!data ||
       !data.data ||
       !data.data.activities ||
@@ -45,11 +45,9 @@ export default function discordActivity(data: DiscordApiResponse) {
               {data?.data?.activities?.map(
                 (activity: Activity, index: number) =>
                   activity.name !== "Custom Status" && (
-                    <DiscordActivityCard
-                      key={index}
-                      activity={activity}
-                      data={data}
-                    />
+                    <div key={index} className="my-2">
+                      <DiscordActivityCard activity={activity} data={data} />
+                    </div>
                   )
               )}
             </div>

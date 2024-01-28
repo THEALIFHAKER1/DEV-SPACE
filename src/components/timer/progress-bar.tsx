@@ -24,7 +24,7 @@ export function ProgressBar({ start, end }: SpotifyBarProps) {
     <div className="py-1">
       <Progress
         value={progress}
-        className="w-full bg-neutral-400 dark:bg-neutral-500"
+        className="w-full rounded bg-neutral-400 dark:bg-neutral-500"
       />
     </div>
   );

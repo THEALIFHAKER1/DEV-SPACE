@@ -5,9 +5,9 @@ import * as React from "react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { DiscordStatus } from "./discord-status";
+import { DiscordStatus } from "./_components/discord-status";
 import { Skeleton } from "@/components/ui/skeleton";
-import { DiscordActivityCard } from "./discord-activity-card";
+import { DiscordActivityCard } from "./_components/discord-activity-card";
 
 import { env } from "@/env.mjs";
 import { DiscordApiResponse, DiscordApiContent, Activity } from "@/types";

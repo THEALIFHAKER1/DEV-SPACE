@@ -8,8 +8,8 @@ import { env } from "@/env.mjs";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { DiscordStatus } from "./discord-status";
-import DiscordActivity from "./discord-activity";
+import { DiscordStatus } from "./_components/discord-status";
+import DiscordActivity from "./_components/discord-activity";
 interface MessageData {
   op: number;
   t: string;
@@ -88,7 +88,7 @@ export default function DiscordCard() {
         ) : (
           <div>
             {data.data && (
-              <div>
+              <div className="">
                 <DiscordStatus data={data.data} />
                 <DiscordActivity data={data.data} />
               </div>
