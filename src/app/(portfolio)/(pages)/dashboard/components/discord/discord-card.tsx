@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DiscordStatus } from "./_components/discord-status";
 import DiscordActivity from "./_components/discord-activity";
+import { motion } from "framer-motion";
 interface MessageData {
   op: number;
   t: string;
@@ -86,14 +87,19 @@ export default function DiscordCard() {
             <Skeleton className="h-8 w-full" />
           </div>
         ) : (
-          <div>
+          <motion.div
+            initial={{ height: 80 }}
+            animate={{ height: "fit-content" }}
+            transition={{ duration: 0.5 }}
+            style={{ overflow: "hidden" }}
+          >
             {data.data && (
               <div className="">
                 <DiscordStatus data={data.data} />
                 <DiscordActivity data={data.data} />
               </div>
             )}
-          </div>
+          </motion.div>
         )}
       </CardContent>
     </Card>
