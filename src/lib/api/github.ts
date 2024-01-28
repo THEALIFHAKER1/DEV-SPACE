@@ -11,6 +11,7 @@ export async function getRepositories(): Promise<Repository[]> {
     },
     next: {
       tags: ["AllRepositories"],
+      revalidate: 3000,
     },
   });
 
