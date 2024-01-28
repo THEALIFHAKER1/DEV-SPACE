@@ -216,7 +216,7 @@ export default function LanguageBadge({ language }: LanguageBadgeProps) {
           LanguagesColor[language as keyof typeof LanguagesColor]
         )}`,
       }}
-      className="mx-1"
+      className="mx-1 rounded-sm"
     >
       {language}
     </Badge>
