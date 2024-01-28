@@ -1,20 +1,16 @@
 import { env } from "@/env.mjs";
+import type { LanyardResponse, Snowflake } from "use-lanyard";
 
-// Fetch my discord activity
-export const getDiscordActivity = async () => {
-  const response = await fetch(
-    `https://api.lanyard.rest/v1/users/${env.DISCORD_ID}`,
-    {
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+const DISCORD_ID = env.NEXT_PUBLIC_DISCORD_ID;
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch discord activity");
+export default async function getDiscordActivity() {
+  const lanyard = await fetch(
+    `https://api.lanyard.rest/v1/users/${DISCORD_ID}`
+  ).then((res) => res.json() as Promise<LanyardResponse>);
+
+  if (!lanyard.success) {
+    throw new Error("Lanyard API failed");
   }
 
-  return await response.json();
-};
+  return lanyard.data;
+}

@@ -3865,6 +3865,7 @@ __metadata:
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5.3.3"
     typewriter-effect: "npm:^2.21.0"
+    use-lanyard: "npm:^1.5.2"
     vaul: "npm:^0.8.7"
     wretch: "npm:^2.8.0"
     zod: "npm:^3.22.4"
@@ -5430,6 +5431,16 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 6666cd62e13053d03e453b5199037cb8f6475a8f55afd664ff488bd8f2ee2ede4da3b220dd7e60f5ecd4926133364fbf4b1aed463eeb8203e7c5be3b1533b59b
+  languageName: node
+  linkType: hard
+
+"use-lanyard@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "use-lanyard@npm:1.5.2"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: cab0e909961220b515db3d8d75e411e88081c48160c366af876ccffe1574cade0a6d3893551cfb252a74c2580eb8411f49cabf826a37822af4bcc2a80b98877e
   languageName: node
   linkType: hard
 

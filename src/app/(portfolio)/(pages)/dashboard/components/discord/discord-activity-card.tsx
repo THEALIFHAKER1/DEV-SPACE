@@ -74,7 +74,7 @@ export function DiscordActivityCard({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <div>
+      <div className="w-full">
         <AlertTitle className="line-clamp-1">{activity.name}</AlertTitle>
         <AlertDescription className="line-clamp-1">
           {activity.details || null}
