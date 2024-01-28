@@ -78,7 +78,7 @@ function NightCard({ time }: { time: Date }) {
 
 function DayCard({ time }: { time: Date }) {
   return (
-    <Card className="relative overflow-hidden h-full hovers w-full md:w-[150px] md:h-[150px] bg-blue-400 dark:bg-neutral-800 text-white md:max-w-[400px] border border-black dark:border-neutral-700">
+    <Card className="relative overflow-hidden  hovers w-full md:w-[150px] h-[150px] bg-blue-400 dark:bg-neutral-800 text-white md:max-w-[400px] border border-black dark:border-neutral-700">
       <motion.div
         aria-hidden
         animate={{
