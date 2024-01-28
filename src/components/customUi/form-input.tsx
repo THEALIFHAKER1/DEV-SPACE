@@ -22,6 +22,7 @@ interface FormInputProps {
   subLinkHref?: string;
   subLinkLabel?: string;
   className?: string;
+  onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function FormInput({
@@ -34,6 +35,7 @@ export default function FormInput({
   subLinkHref,
   subLinkLabel,
   className,
+  onchange,
 }: FormInputProps) {
   return (
     <FormField

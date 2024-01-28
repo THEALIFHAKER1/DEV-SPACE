@@ -1,12 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { HeadingText } from "@/components/ui/heading-text";
 import { Suspense } from "react";
-import { FormIn, FormOut } from "./components/Form";
-import { getAllGuestBookEntries } from "@/lib/db/data/guestbook";
-import { GuestBookSkeleton } from "./components/guestbookkeleton";
-import { auth } from "@/auth";
-import { FaUser } from "react-icons/fa";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { GuestBookSkeleton } from "./components/guestbookSkeleton";
 import GuestbookEntries from "./components/guesbookEntries";
 import GuestbookForm from "./components/guestBookForm";
 
