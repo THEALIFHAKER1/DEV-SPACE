@@ -4,6 +4,7 @@ const SPOTIFY_REFRESH_TOKEN = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN;
 
 async function getAccessToken() {
   const response = await fetch("https://accounts.spotify.com/api/token", {
+    mode: "no-cors",
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
