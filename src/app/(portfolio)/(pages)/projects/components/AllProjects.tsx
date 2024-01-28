@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 import { FaCodeFork } from "react-icons/fa6";
+import { getTextColor } from "@/lib/utils/get-text-color";
+import LanguageBadge from "./LanguageBadge";
 
 export default async function AllProjects({ filter }: { filter: string }) {
   const repositories = (await getRepositories()) as Repository[];
@@ -51,16 +53,16 @@ export default async function AllProjects({ filter }: { filter: string }) {
           </CardHeader>
           <CardFooter className="flex justify-between">
             <div className="">
-              {Object.keys(repo.languages).map((language) => (
-                <Badge className="mx-1" key={language}>
-                  {language}
-                </Badge>
-              ))}
+              {Object.keys(repo.languages)
+                .filter((language) => language !== "Hack")
+                .map((language) => (
+                  <LanguageBadge key={language} language={language} />
+                ))}
             </div>
             <div className="flex gap-2">
               <CardDescription className="flex items-center gap-1">
                 <FaCodeFork className="h-4 w-4" />
-                {repo.stargazers_count}
+                {repo.forks_count}
               </CardDescription>
               <CardDescription className="flex items-center gap-1">
                 <Star className="h-4 w-4" />

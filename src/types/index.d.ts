@@ -27,6 +27,7 @@ export type Repository = {
     [key: string]: number;
   };
   stargazers_count: number;
+  forks_count: number;
 };
 
 // Wakatime
