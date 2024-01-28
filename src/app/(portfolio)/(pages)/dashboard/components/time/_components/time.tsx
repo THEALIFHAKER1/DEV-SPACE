@@ -7,10 +7,22 @@ export default function Time({ time }: { time: Date }) {
   const isNight = time.getHours() >= 17 || time.getHours() < 6;
   return (
     <>
-      <div>{isNight ? <NightCard time={time} /> : <DayCard time={time} />}</div>
-      <div>
+      <motion.div
+        initial={{ height: 80 }}
+        animate={{ height: "fit-content" }}
+        transition={{ duration: 0.5 }}
+        style={{ overflow: "hidden" }}
+      >
+        {isNight ? <NightCard time={time} /> : <DayCard time={time} />}
+      </motion.div>
+      <motion.div
+        initial={{ height: 80 }}
+        animate={{ height: "fit-content" }}
+        transition={{ duration: 0.5 }}
+        style={{ overflow: "hidden" }}
+      >
         {!isNight ? <NightCard time={time} /> : <DayCard time={time} />}
-      </div>
+      </motion.div>
     </>
   );
 }
