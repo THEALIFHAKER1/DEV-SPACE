@@ -24,7 +24,7 @@ export default async function AllProjects({ filter }: { filter: string }) {
       {filteredRepositories.map((repo) => (
         <Card
           key={repo.id}
-          className="flex flex-col justify-between rounded-xl dark:bg-neutral-800 bg-neutral-200 border border-black dark:border-neutral-700"
+          className="hovers flex flex-col justify-between rounded-xl dark:bg-neutral-800 bg-neutral-200 border border-black dark:border-neutral-700"
         >
           <CardHeader>
             <div className="flex justify-between">

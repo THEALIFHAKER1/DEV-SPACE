@@ -18,7 +18,7 @@ export default async function GuestbookEntries() {
       {entries.map((entry) => (
         <div
           key={entry.id}
-          className="flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3 gap-2 items-center"
+          className="hovers flex hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:drop-shadow-md duration-100 rounded-lg p-3 gap-2 items-center"
         >
           <Avatar className="w-10 h-10">
             <AvatarFallback>

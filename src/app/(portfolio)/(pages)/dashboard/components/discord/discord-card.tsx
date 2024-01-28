@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DiscordStatus } from "./_components/discord-status";
 import DiscordActivity from "./_components/discord-activity";
+import DiscordSkeleton from "./_components/discord-skeleton";
 import { motion } from "framer-motion";
 interface MessageData {
   op: number;
@@ -73,19 +74,13 @@ export default function DiscordCard() {
   };
 
   return (
-    <Card className="w-full md:w-[400px] dark:bg-neutral-800 bg-neutral-200 md:max-w-[400px] border border-black dark:border-neutral-700">
+    <Card className="hovers w-full md:w-[400px] dark:bg-neutral-800 bg-neutral-200 md:max-w-[400px] border border-black dark:border-neutral-700">
       <CardHeader>
         <CardTitle className="text-sm font-medium">Discord activity</CardTitle>
       </CardHeader>
       <CardContent>
         {!data ? (
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <Skeleton className="h-10 w-10 rounded-full" />
-              <Skeleton className="h-10 w-[14rem]" />
-            </div>
-            <Skeleton className="h-8 w-full" />
-          </div>
+          <DiscordSkeleton />
         ) : (
           <motion.div
             initial={{ height: 80 }}

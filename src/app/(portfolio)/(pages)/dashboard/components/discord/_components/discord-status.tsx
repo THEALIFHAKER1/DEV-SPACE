@@ -18,14 +18,14 @@ export function DiscordStatus(data: DiscordApiResponse) {
   const statusInfo = status(data.data.discord_status);
 
   return (
-    <div className="flex flex-col-reverse justify-end items-end w-fit bg-background p-3 rounded-xl">
+    <div className=" hovers flex flex-col-reverse justify-end items-end w-fit bg-background p-3 rounded-xl">
       <div className="flex gap-2">
         <div className="flex items-center justify-center">
-          <Avatar className="w-14 h-15 rounded-md">
+          <Avatar className="w-14 h-14 rounded-md">
             <AvatarImage
               src={`https://cdn.discordapp.com/avatars/${data.data.discord_user.id}/${data.data.discord_user.avatar}`}
             />
-            <AvatarFallback>R</AvatarFallback>
+            <AvatarFallback className="w-14 h-14 rounded-md">R</AvatarFallback>
           </Avatar>
         </div>
         <div>
@@ -36,7 +36,7 @@ export function DiscordStatus(data: DiscordApiResponse) {
             <BsDiscord />
             <span className="text-sm">{statusInfo.text}</span>
           </div>
-          <div className="text-lg font-bold">
+          <div className="text-xs font-bold">
             {data.data.discord_user.global_name}
           </div>
           <p className="text-xs text-muted-foreground">

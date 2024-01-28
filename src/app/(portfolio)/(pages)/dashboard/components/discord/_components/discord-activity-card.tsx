@@ -21,7 +21,7 @@ export function DiscordActivityCard({
   data,
 }: DiscordActivityCardProps) {
   return (
-    <Alert className="w-full flex items-center gap-3 flex-row text-left border-none">
+    <Alert className="hovers w-full flex items-center gap-3 flex-row text-left border-none">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
