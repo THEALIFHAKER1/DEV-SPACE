@@ -19,10 +19,10 @@ export default function DashboardPage() {
         </HeadingText>
         <div className="flex flex-wrap gap-2">
           <div className="w-full md:w-fit">
-            <DiscordCard />
+            <TimeCard />
           </div>
           <div className="w-full md:w-fit">
-            <TimeCard />
+            <DiscordCard />
           </div>
           {/* <BlankActivity />
           <LongBlankActivity /> */}
