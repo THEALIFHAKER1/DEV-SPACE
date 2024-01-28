@@ -22,6 +22,10 @@ export type Repository = {
   html_url: string;
   homepage: string;
   language: string;
+  languages_url: string;
+  languages: {
+    [key: string]: number;
+  };
   stargazers_count: number;
 };
 

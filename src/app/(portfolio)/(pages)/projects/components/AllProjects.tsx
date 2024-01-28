@@ -50,7 +50,13 @@ export default async function AllProjects({ filter }: { filter: string }) {
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex justify-between">
-            <Badge>{repo.language}</Badge>
+            <div className="">
+              {Object.keys(repo.languages).map((language) => (
+                <Badge className="mx-1" key={language}>
+                  {language}
+                </Badge>
+              ))}
+            </div>
             <div className="flex gap-2">
               <CardDescription className="flex items-center gap-1">
                 <FaCodeFork className="h-4 w-4" />

@@ -18,5 +18,26 @@ export async function getRepositories(): Promise<Repository[]> {
     throw new Error(`API request failed with status ${response.status}`);
   }
 
-  return (await response.json()) as Repository[];
+  const repositories = await response.json();
+
+  const repositoriesWithLanguages = await Promise.all(
+    repositories.map(async (repo: Repository) => {
+      const languagesUrl = repo.languages_url;
+
+      const languagesResponse = await fetch(languagesUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!languagesResponse.ok) {
+        throw new Error(`Failed to fetch languages for repo ${repo.name}`);
+      }
+
+      const languages = await languagesResponse.json();
+      return { ...repo, languages };
+    })
+  );
+
+  return repositoriesWithLanguages;
 }
