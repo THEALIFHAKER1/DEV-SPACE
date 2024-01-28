@@ -51,7 +51,7 @@ function NightCard({ time }: { time: Date }) {
         <canvas
           ref={canvasRef}
           aria-hidden
-          className="pointer-events-none h-full w-full md:w-[150px] md:h-[150px] overflow-hidden rounded-2xl"
+          className="pointer-events-none w-full md:w-[150px] h-[150px] overflow-hidden rounded-2xl"
         />
         <div className="absolute inset-0">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
