@@ -3,6 +3,7 @@ import { HeadingText } from "../../../../components/ui/heading-text";
 import DiscordCard from "./components/discord/discord-card";
 import BlankActivity from "./components/blank/blank";
 import LongBlankActivity from "./components/blank/longBlank";
+import TimeCard from "./components/time/time-card";
 
 export const metadata = {
   title: "Dashboard",
@@ -17,9 +18,14 @@ export default function DashboardPage() {
           Dashboard
         </HeadingText>
         <div className="flex flex-wrap gap-2">
-          <DiscordCard />
-          <BlankActivity />
-          <LongBlankActivity />
+          <div className="w-full md:w-fit">
+            <DiscordCard />
+          </div>
+          <div className="w-full md:w-fit">
+            <TimeCard />
+          </div>
+          {/* <BlankActivity />
+          <LongBlankActivity /> */}
         </div>
       </div>
     </main>
