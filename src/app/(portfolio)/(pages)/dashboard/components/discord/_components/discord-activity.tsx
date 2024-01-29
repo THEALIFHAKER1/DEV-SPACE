@@ -22,22 +22,22 @@ export default function discordActivity(data: DiscordApiResponse) {
               {data?.data?.activities?.map(
                 (activity: Activity, index: number) =>
                   activity.name === "Custom Status" && (
-                    <p key={index} className="">
+                    <p key={index} className="my-2">
                       {activity.state}
                     </p>
                   )
               )}
-              <Alert className="">
+              <Alert className="my-2">
                 <AlertDescription>No activities currently.</AlertDescription>
               </Alert>
             </div>
           ) : (
-            <div className="">
+            <div className="my-2">
               {/* Render custom status including other activities */}
               {data?.data?.activities?.map(
                 (activity: Activity, index: number) =>
                   activity.name === "Custom Status" && (
-                    <p key={index} className="">
+                    <p key={index} className="my-2">
                       {activity.state}
                     </p>
                   )
