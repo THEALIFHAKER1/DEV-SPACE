@@ -6,7 +6,9 @@ import { usePathname as Pathname } from "next/navigation";
 const navigationLinks = [
   { path: "/", label: "Home" },
   { path: "/dashboard", label: "Dashboard" },
+  // { path: "/blog", label: "Blog" },
   { path: "/projects", label: "Projects" },
+  { path: "/about", label: "About" },
 ];
 
 function Navigation() {

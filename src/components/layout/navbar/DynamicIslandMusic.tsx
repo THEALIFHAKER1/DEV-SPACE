@@ -97,7 +97,7 @@ function DynamicSmall({ currentlyPlaying }: { currentlyPlaying: Song }) {
           <div className="flex w-full flex-col justify-center align-middle items-center text-white">
             <div>
               {currentlyPlaying.name.length > 20 ? (
-                <Marquee loop={2} pauseOnHover>
+                <Marquee loop={100}>
                   <p className="whitespace-nowrap overflow-hidden text-ellipsis font-bold">
                     {currentlyPlaying.name}
                   </p>
