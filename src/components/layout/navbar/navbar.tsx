@@ -11,7 +11,13 @@ export default function Navbar() {
       <nav className="z-50 fixed w-full select-none bg-background p-5">
         <div className="flex justify-between">
           <Logo />
-          <DynamicIslandMusic />
+          <div className=" md:hidden">
+            <DynamicIslandMusic />
+          </div>
+          <div className="hidden md:block">
+            <NowPlaying />
+          </div>
+
           <div className="flex items-center gap-4">
             <ul className=" md:flex hidden items-center space-x-4 text-sm text-zinc-500 dark:text-zinc-400">
               <Navigation />

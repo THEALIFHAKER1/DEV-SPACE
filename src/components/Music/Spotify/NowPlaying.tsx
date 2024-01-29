@@ -63,7 +63,7 @@ function NowPlaying() {
               style={{ overflow: "hidden" }}
             >
               <div
-                className="w-200px overflow-hidden"
+                className="hovers w-200px overflow-hidden"
                 style={{
                   backgroundImage: currentlyPlaying
                     ? `url(${currentlyPlaying.albumArtUrl})`
@@ -77,16 +77,11 @@ function NowPlaying() {
                 <div
                   className={`${
                     theme === "light"
-                      ? "bg-gradient-to-r from-white via-transparent"
-                      : "bg-gradient-to-r from-black via-transparent"
+                      ? "bg-gradient-to-r from-white via-slate-700/30 to-white"
+                      : "bg-gradient-to-l from-black via-slate-700/30 to-black"
                   } flex pl-10px items-center relative overflow-hidden`}
                 >
-                  {currentlyPlaying && (
-                    <div className="pr-2">
-                      <AnimatedBars />
-                    </div>
-                  )}
-                  <div className="flex flex-col">
+                  <div className="flex w-full flex-col justify-center align-middle items-center text-white">
                     <div>
                       {currentlyPlaying.name.length > 20 ? (
                         <Marquee loop={2} pauseOnHover>
