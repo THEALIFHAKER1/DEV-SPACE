@@ -4,8 +4,6 @@ import getCurrentlyPlaying from "@/lib/api/spotify";
 import LiveIsland from "../../customUi/dynamicIsland/LiveIsland";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import AnimatedBars from "@/components/Music/Spotify/Animation";
-import NowPlaying from "@/components/Music/Spotify/NowPlaying";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "next-themes";
@@ -124,9 +122,8 @@ function DynamicSmall({ currentlyPlaying }: { currentlyPlaying: Song }) {
 
 function DynamicLarge({ currentlyPlaying }: { currentlyPlaying: Song }) {
   return (
-    <div className="flex justify-center items-center top-5 gap-4">
+    <div className="flex justify-center items-center top-5 gap-4 text-foreground">
       <Image
-        priority
         quality={100}
         width={150}
         height={150}
