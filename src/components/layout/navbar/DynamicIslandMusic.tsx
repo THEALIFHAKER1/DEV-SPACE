@@ -53,7 +53,7 @@ export default function DynamicIslandMusic() {
     <div>
       {!loading && currentlyPlaying && (
         <LiveIsland
-          className="flex justify-center items-center top-5 bg-white dark:bg-black"
+          className="flex justify-center items-center top-3 bg-white dark:bg-black"
           initialAnimation
           smallWidth={200}
           smallHeight={48}
