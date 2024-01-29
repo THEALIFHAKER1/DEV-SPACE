@@ -5,7 +5,7 @@ import { DiscordApiResponse, Activity } from "@/types";
 
 export default function discordActivity(data: DiscordApiResponse) {
   return (
-    <div className="md:h-[134px] overflow-auto">
+    <div className="scroll md:h-[134px] overflow-auto">
       {!data ||
       !data.data ||
       !data.data.activities ||

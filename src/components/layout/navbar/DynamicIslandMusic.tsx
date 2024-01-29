@@ -5,6 +5,10 @@ import LiveIsland from "../../customUi/dynamicIsland/LiveIsland";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import AnimatedBars from "@/components/Music/Spotify/Animation";
+import NowPlaying from "@/components/Music/Spotify/NowPlaying";
+import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
+import { useTheme } from "next-themes";
 interface Song {
   name: string;
   artists: Artist[];
@@ -51,9 +55,10 @@ export default function DynamicIslandMusic() {
     <div>
       {!loading && currentlyPlaying && (
         <LiveIsland
-          className="flex justify-center items-center top-5"
+          className="flex justify-center items-center top-5 bg-white dark:bg-black"
           initialAnimation
-          smallWidth={100}
+          smallWidth={200}
+          smallHeight={48}
         >
           {(isSmall) =>
             isSmall ? (
@@ -69,18 +74,51 @@ export default function DynamicIslandMusic() {
 }
 
 function DynamicSmall({ currentlyPlaying }: { currentlyPlaying: Song }) {
+  const { theme } = useTheme();
   return (
-    <div className="flex items-center justify-between gap-6 w-full">
-      <Image
-        quality={100}
-        width={20}
-        height={20}
-        src={currentlyPlaying.albumArtUrl}
-        alt={""}
-        className="rounded-full ml-2"
-      />
-      <AnimatedBars />
-    </div>
+    <motion.div className="w-full ">
+      <div
+        className="hovers w-200px overflow-hidden"
+        style={{
+          backgroundImage: currentlyPlaying
+            ? `url(${currentlyPlaying.albumArtUrl})`
+            : "",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          borderRadius: "3px",
+        }}
+      >
+        <div
+          className={`${
+            theme === "light"
+              ? "bg-gradient-to-r from-white via-slate-700/30 to-white"
+              : "bg-gradient-to-l from-black via-slate-700/30 to-black"
+          } flex pl-10px items-center relative overflow-hidden`}
+        >
+          <div className="flex w-full flex-col justify-center align-middle items-center text-white">
+            <div>
+              {currentlyPlaying.name.length > 20 ? (
+                <Marquee loop={2} pauseOnHover>
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis font-bold">
+                    {currentlyPlaying.name}
+                  </p>
+                </Marquee>
+              ) : (
+                <p className="whitespace-nowrap overflow-hidden text-ellipsis font-bold">
+                  {currentlyPlaying.name}
+                </p>
+              )}
+            </div>
+            <div>
+              <p className="whitespace-nowrap">
+                {currentlyPlaying.artists[0].name}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
