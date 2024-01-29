@@ -54,6 +54,7 @@ export default function DynamicIslandMusic() {
           className="flex justify-center items-center top-5"
           initialAnimation
           smallWidth={100}
+          triggerType="hover"
         >
           {(isSmall) =>
             isSmall ? (
@@ -88,6 +89,7 @@ function DynamicLarge({ currentlyPlaying }: { currentlyPlaying: Song }) {
   return (
     <div className="flex justify-center items-center top-5 gap-4">
       <Image
+        priority
         quality={100}
         width={150}
         height={150}
