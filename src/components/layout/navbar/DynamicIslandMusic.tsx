@@ -54,7 +54,6 @@ export default function DynamicIslandMusic() {
           className="flex justify-center items-center top-5"
           initialAnimation
           smallWidth={100}
-          triggerType="hover"
         >
           {(isSmall) =>
             isSmall ? (
