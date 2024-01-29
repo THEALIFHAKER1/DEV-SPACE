@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
 export default function Time({ time }: { time: Date }) {
-  const isNight = time.getHours() >= 17 || time.getHours() < 6;
+  const isNight = time.getHours() >= 20 || time.getHours() < 8;
   return (
     <motion.div
       initial={{ height: 80 }}
