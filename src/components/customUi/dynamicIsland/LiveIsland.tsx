@@ -61,12 +61,8 @@ const LiveIsland = (props: LiveIslandProps) => {
   onChangeRef.current = onChange;
 
   const onOpen = () => {
-    const canVibrate = "vibrate" in navigator;
-    if (canVibrate) {
-      navigator.vibrate([
-        100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30,
-        100,
-      ]);
+    if (navigator.vibrate) {
+      navigator.vibrate(200);
     }
     setIsSmall(false);
     onChangeRef.current?.(true);
