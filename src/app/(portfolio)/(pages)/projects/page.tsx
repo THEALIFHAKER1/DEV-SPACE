@@ -3,6 +3,7 @@ import AllProjects from "./components/AllProjects";
 import { HeadingText } from "@/components/ui/heading-text";
 import { SearchBar } from "../../../../components/customUi/Search";
 import { AllProjectsSkeleton } from "./components/AllProjectsSkeleton";
+import ProjectsCarousel from "./components/ProjectsCarousel";
 
 export const metadata = {
   title: "Projects",
@@ -21,6 +22,10 @@ export default function ProjectPage({
   return (
     <main className="flex flex-col py-8">
       <div className="space-y-4">
+        <HeadingText subtext="All of my favorite projects">
+          Spotlight Projects
+        </HeadingText>
+        <ProjectsCarousel />
         <HeadingText subtext="All of my repository on github">
           GitHub Repositories
         </HeadingText>
