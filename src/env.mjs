@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    WAKATIME_API_KEY: z.string().startsWith("waka_"),
+    // WAKATIME_API_KEY: z.string().startsWith("waka_"),
     DISCORD_ID: z.string().min(1),
     GITHUB_TOKEN: z.string().min(1),
   },
@@ -12,8 +12,8 @@ export const env = createEnv({
     NEXT_PUBLIC_DISCORD_ID: z.string().min(1),
   },
   runtimeEnv: {
-    // WAKATIME
-    WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
+    // // WAKATIME
+    // WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
     // GITHUB
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     NEXT_PUBLIC_GITHUB_TOKEN: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
